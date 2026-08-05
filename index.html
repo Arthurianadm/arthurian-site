@@ -292,6 +292,107 @@
       .section-watermark img { width: 105vw; opacity: .085; }
       .section-heading.centered .eyebrow { text-align: left; }
     }
+  
+  
+    /* Nossa História e O que nos move */
+    .story-layout {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: start;
+    }
+
+    .story-heading {
+      position: sticky;
+      top: 8rem;
+      text-align: left;
+      max-width: 460px;
+      margin: 0;
+    }
+
+    .story-copy {
+      max-width: 760px;
+    }
+
+    .story-copy p {
+      margin: 0 0 1.25rem;
+      line-height: 1.85;
+    }
+
+    .story-emphasis {
+      margin-top: 2rem !important;
+      padding: 1.5rem 0 1.5rem 1.5rem;
+      border-left: 2px solid var(--gold);
+      font-family: var(--serif);
+      font-size: clamp(1.18rem, 2vw, 1.55rem);
+      line-height: 1.55 !important;
+      color: var(--ink);
+    }
+
+    .values-section {
+      background: var(--cream, #f8f6f1);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3.5rem;
+    }
+
+    .value-card {
+      padding: clamp(1.6rem, 3vw, 2.4rem);
+      border: 1px solid rgba(22, 22, 22, .12);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .7);
+    }
+
+    .value-label {
+      display: inline-block;
+      margin-bottom: 1.1rem;
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .value-card h3 {
+      margin: 0 0 1rem;
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+      font-weight: 500;
+    }
+
+    .value-card p,
+    .value-card li {
+      line-height: 1.7;
+    }
+
+    .value-card ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+
+    .value-card li + li {
+      margin-top: .55rem;
+    }
+
+    @media (max-width: 920px) {
+      .story-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .story-heading {
+        position: static;
+        max-width: 760px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -312,7 +413,7 @@
         <a href="#diferenciais">Por que Arthurian</a>
         <a href="#desafio">Desafio Arthurian</a>
         <a href="#conteudo-util">Conteúdo</a>
-        <a href="#depoimentos">Depoimentos</a>
+        <a href="#nossa-historia">Nossa história</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
@@ -507,43 +608,62 @@
       </div>
     </section>
 
-    <section class="section section-soft" id="depoimentos">
+    <section class="section section-soft" id="nossa-historia">
       <div class="section-watermark" aria-hidden="true"><img src="assets/logo-arthurian.png" alt=""></div>
       <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">A confiança de quem escolheu a Arthurian</p>
-          <h2>Histórias reais, contadas por nossos clientes.</h2>
-          <p>Este espaço será preenchido com fotos e depoimentos autorizados de clientes.</p>
-        </div>
-        <div class="testimonial-grid">
-          <article class="testimonial placeholder reveal">
-            <div class="avatar" aria-hidden="true">Foto</div>
-            <blockquote>Depoimento do cliente sobre o atendimento e a experiência com a Arthurian.</blockquote>
-            <p><strong>Nome do cliente</strong><br><span>Profissão • Cidade/UF</span></p>
-          </article>
-          <article class="testimonial placeholder reveal">
-            <div class="avatar" aria-hidden="true">Foto</div>
-            <blockquote>Depoimento do cliente sobre o atendimento e a experiência com a Arthurian.</blockquote>
-            <p><strong>Nome do cliente</strong><br><span>Profissão • Cidade/UF</span></p>
-          </article>
-          <article class="testimonial placeholder reveal">
-            <div class="avatar" aria-hidden="true">Foto</div>
-            <blockquote>Depoimento do cliente sobre o atendimento e a experiência com a Arthurian.</blockquote>
-            <p><strong>Nome do cliente</strong><br><span>Profissão • Cidade/UF</span></p>
-          </article>
+        <div class="story-layout">
+          <div class="section-heading story-heading reveal">
+            <p class="eyebrow">Nossa história</p>
+            <h2>Uma empresa que nasceu para encontrar soluções.</h2>
+          </div>
+
+          <div class="story-copy reveal">
+            <p>A Arthurian nasceu da prática e da experiência adquiridas ao lado de empresários, profissionais liberais, produtores rurais e famílias atendidos pela <strong>Fumagali Advocacia</strong>.</p>
+            <p>Ao longo dos anos, percebemos que muitas demandas apresentadas pelos nossos clientes iam além da esfera jurídica. Em diversas situações, o verdadeiro desafio não era apenas resolver um problema já existente, mas evitar que ele acontecesse.</p>
+            <p>Foi nesse momento que compreendemos que proteger um patrimônio exige mais do que conhecimento técnico. Exige planejamento, análise e a capacidade de identificar, entre inúmeras possibilidades, a solução mais adequada para cada realidade.</p>
+            <p>Assim nasceu a Arthurian.</p>
+            <p>Não como uma corretora voltada apenas à comercialização de seguros, mas como uma empresa dedicada a oferecer consultoria em proteção patrimonial, conectando pessoas e empresas às soluções mais seguras e eficientes disponíveis no mercado.</p>
+            <p>Acreditamos que cada cliente possui uma história, um patrimônio e objetivos próprios. Por isso, não trabalhamos com soluções padronizadas. Analisamos cada necessidade de forma individual para identificar o caminho que melhor proteja aquilo que foi construído ao longo de uma vida ou de anos de dedicação a um negócio.</p>
+            <p>Em alguns momentos, essa solução poderá ser um seguro empresarial. Em outros, um seguro garantia para viabilizar um contrato ou uma licitação, um seguro de responsabilidade civil para proteger uma atividade profissional, um seguro de vida para garantir a tranquilidade da família ou qualquer outra alternativa que efetivamente atenda às necessidades do cliente.</p>
+            <p class="story-emphasis">Nosso compromisso nunca foi vender um produto. Nosso compromisso sempre será encontrar a solução mais adequada para proteger pessoas, empresas e patrimônios, com transparência, responsabilidade e uma atuação verdadeiramente consultiva.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section partners">
+    <section class="section values-section" id="o-que-nos-move">
+      <div class="section-watermark" aria-hidden="true"><img src="assets/logo-arthurian.png" alt=""></div>
       <div class="container">
         <div class="section-heading reveal">
-          <p class="eyebrow">Seguradoras e parceiros</p>
-          <h2>Opções reconhecidas no mercado.</h2>
-          <p>As marcas serão inseridas após a confirmação das autorizações e dos materiais oficiais de cada parceira.</p>
+          <p class="eyebrow">O que nos move</p>
+          <h2>Proteção construída com propósito.</h2>
         </div>
-        <div class="partner-list reveal" aria-label="Espaços reservados para logos de parceiros">
-          <span>Porto</span><span>Mapfre</span><span>Zurich</span><span>Tokio Marine</span><span>Generali</span><span>Berkley</span>
+
+        <div class="values-grid">
+          <article class="value-card reveal">
+            <span class="value-label">Missão</span>
+            <h3>Proteger com responsabilidade.</h3>
+            <p>Proteger pessoas, famílias e empresas por meio de uma consultoria responsável, identificando soluções que proporcionem segurança, continuidade e tranquilidade para cada fase da vida e dos negócios.</p>
+          </article>
+
+          <article class="value-card reveal">
+            <span class="value-label">Visão</span>
+            <h3>Ser referência em confiança.</h3>
+            <p>Ser reconhecida como referência em consultoria em proteção patrimonial, destacando-se pela confiança, excelência técnica, atendimento próximo e capacidade de encontrar soluções personalizadas para cada cliente.</p>
+          </article>
+
+          <article class="value-card reveal">
+            <span class="value-label">Valores</span>
+            <h3>Princípios que orientam cada decisão.</h3>
+            <ul>
+              <li>Ética em todas as relações.</li>
+              <li>Transparência em cada orientação.</li>
+              <li>Compromisso com a proteção do cliente.</li>
+              <li>Excelência técnica.</li>
+              <li>Atendimento humano e próximo.</li>
+              <li>Responsabilidade e evolução contínua.</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
