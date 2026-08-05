@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Arthurian Seguros by Fumagali — Corretora de Seguros e Consultoria Empresarial. Soluções para pessoas, famílias, profissionais e empresas.">
+  <meta name="theme-color" content="#f8f6f1">
+  <title>Arthurian Seguros | Proteção com confiança</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Ajustes da versão 1.1 */
+    .hero-grid {
+      grid-template-columns: 1.08fr .92fr;
+      gap: 3.5vw;
+    }
+    .hero-mark {
+      align-self: start;
+      padding-top: 2.5rem;
+      justify-content: center;
+    }
+    .hero-mark img {
+      width: min(455px, 92%);
+    }
+    .section-watermark {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .section-watermark img {
+      width: min(760px, 70vw);
+      opacity: .025;
+      filter: grayscale(1);
+    }
+    .section > .container { position: relative; z-index: 1; }
+
+    .challenge-intro { max-width: 760px; }
+    .challenge-highlight {
+      margin: 2.2rem 0 2.5rem;
+      padding: 1.5rem 1.6rem;
+      border-left: 2px solid var(--gold);
+      background: rgba(255,255,255,.045);
+    }
+    .challenge-highlight strong {
+      display: block;
+      color: #fff;
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      font-weight: 500;
+      line-height: 1.15;
+    }
+    .challenge-highlight span { color: #d8d6cf; }
+    .challenge-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255,255,255,.16);
+      border-left: 1px solid rgba(255,255,255,.16);
+      margin-top: 3.5rem;
+    }
+    .challenge-step {
+      padding: 1.7rem;
+      border-right: 1px solid rgba(255,255,255,.16);
+      border-bottom: 1px solid rgba(255,255,255,.16);
+    }
+    .challenge-step span {
+      color: #d7ba7f;
+      font-size: .72rem;
+      letter-spacing: .15em;
+    }
+    .challenge-step h3 {
+      color: #fff;
+      margin: .8rem 0;
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .challenge-step p { margin: 0; font-size: .92rem; }
+    .challenge-criteria {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2.2rem;
+    }
+    .challenge-criteria article {
+      padding: 1.35rem;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 14px;
+      background: rgba(255,255,255,.025);
+    }
+    .challenge-criteria h3 {
+      color: #fff;
+      font-family: var(--sans);
+      font-size: .98rem;
+      font-weight: 600;
+      margin-bottom: .4rem;
+    }
+    .challenge-criteria p { margin: 0; font-size: .88rem; }
+    .challenge-note {
+      margin-top: 2rem;
+      color: #aaa79e;
+      font-size: .78rem;
+      max-width: 900px;
+    }
+    @media (max-width: 920px) {
+      .hero-mark { order: 0; padding-top: 0; justify-content: center; }
+      .challenge-steps { grid-template-columns: 1fr 1fr; }
+      .challenge-criteria { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      .challenge-steps { grid-template-columns: 1fr; }
+    }
+
+
+    /* Refinamentos da versão 1.2 */
+    .hero {
+      min-height: calc(100svh - 86px);
+      padding: clamp(2.5rem, 5vh, 4.25rem) 0;
+    }
+    .hero-grid {
+      align-items: center;
+      min-height: 0;
+    }
+    .hero-copy h1 {
+      font-size: clamp(4.1rem, 7.4vw, 7rem);
+      line-height: .94;
+      margin-bottom: 1.15rem;
+    }
+    .hero-copy .eyebrow { margin-bottom: .8rem; }
+    .hero-text { margin: 0; }
+    .hero-actions { margin-top: 1.7rem; }
+    .hero-mark {
+      align-self: center;
+      padding-top: 0;
+      transform: translateY(-2.5vh);
+    }
+    .hero-mark img { width: min(430px, 88%); }
+
+    .solution-card { padding-top: 2.6rem; }
+    .solution-card h3 { margin-bottom: 1.35rem; }
+
+    .challenge .container {
+      width: min(calc(100% - 48px), 1280px);
+    }
+    .challenge-intro {
+      max-width: 960px;
+      margin-inline: auto;
+      text-align: center;
+    }
+    .challenge-intro > p:not(.eyebrow) {
+      max-width: 780px;
+      margin-inline: auto;
+    }
+    .challenge-highlight {
+      max-width: 820px;
+      margin: 2.2rem auto 2.4rem;
+      text-align: center;
+      border-left: 0;
+      border-top: 1px solid rgba(215,186,127,.65);
+      border-bottom: 1px solid rgba(215,186,127,.25);
+    }
+    .challenge-steps {
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      margin-top: 4rem;
+    }
+    .challenge-step {
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      padding: 2rem 1.45rem;
+    }
+    .challenge-icon {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(215,186,127,.55);
+      border-radius: 50%;
+      color: #d7ba7f;
+    }
+    .challenge-icon svg { width: 29px; height: 29px; stroke: currentColor; }
+    .challenge-step h3 { margin: 0 0 .75rem; }
+    .challenge-criteria {
+      max-width: 1120px;
+      margin: 1.35rem auto 0;
+    }
+    .challenge-criteria article {
+      min-height: 168px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .challenge-note {
+      max-width: 1080px;
+      margin: 2rem auto 0;
+      text-align: center;
+    }
+
+    .section-heading.centered {
+      max-width: 920px;
+      margin-inline: auto;
+      text-align: center;
+    }
+    .section-heading.centered > p:last-child { margin-inline: auto; }
+    #conteudo-util .content-grid {
+      max-width: 1240px;
+      margin-inline: auto;
+    }
+
+    .company-data {
+      margin-top: 1.25rem;
+      color: #b8b4aa;
+      font-size: .92rem;
+      line-height: 1.7;
+    }
+
+    @media (max-height: 820px) and (min-width: 921px) {
+      .hero { padding: 2.15rem 0 2.7rem; }
+      .hero-copy h1 { font-size: clamp(3.85rem, 6.6vw, 6rem); }
+      .hero-mark img { width: min(380px, 82%); }
+      .hero-actions { margin-top: 1.35rem; }
+    }
+    @media (max-width: 920px) {
+      .hero { min-height: auto; padding: 4rem 0 5rem; }
+      .hero-mark { transform: none; }
+      .challenge-steps { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 620px) {
+      .hero-copy h1 { font-size: clamp(3.5rem, 18vw, 5rem); }
+      .challenge .container { width: min(calc(100% - 28px), 1280px); }
+      .challenge-steps { grid-template-columns: 1fr; }
+      .challenge-step { min-height: auto; }
+    }
+
+    /* Ajustes finais de formatação — conteúdo preservado */
+    #solucoes {
+      padding-top: 78px;
+    }
+
+    .section-watermark {
+      inset: 0;
+      place-items: center;
+    }
+    .section-watermark img {
+      width: min(720px, 64vw);
+      opacity: .12;
+      filter: grayscale(1) sepia(.18);
+      transform: none;
+    }
+
+    .section-heading.centered {
+      width: 100%;
+      max-width: 980px;
+    }
+    .section-heading.centered .eyebrow {
+      text-align: left;
+      width: 100%;
+      margin-bottom: .9rem;
+    }
+    .section-heading.centered h2 {
+      text-align: center;
+    }
+
+    .site-footer .footer-grid > div:first-child {
+      text-align: center;
+    }
+    .site-footer .footer-grid > div:first-child img {
+      margin: 0 auto 1rem;
+    }
+    .site-footer .footer-grid > div:first-child p {
+      margin-inline: auto;
+    }
+
+    @media (max-width: 920px) {
+      #solucoes { padding-top: 62px; }
+      .section-watermark img { width: min(620px, 88vw); opacity: .10; }
+    }
+
+    @media (max-width: 620px) {
+      #solucoes { padding-top: 52px; }
+      .section-watermark img { width: 105vw; opacity: .085; }
+      .section-heading.centered .eyebrow { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header" id="inicio">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Arthurian Seguros - início">
+        <img src="assets/logo-arthurian.png" alt="Arthurian Seguros by Fumagali">
+      </a>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <span></span><span></span>
+      </button>
+
+      <nav id="menu-principal" class="main-nav" aria-label="Navegação principal">
+        <a href="#solucoes">Soluções</a>
+        <a href="#diferenciais">Por que Arthurian</a>
+        <a href="#desafio">Desafio Arthurian</a>
+        <a href="#conteudo-util">Conteúdo</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Corretora de Seguros e Consultoria Empresarial</p>
+          <h1>Proteção com confiança.</h1>
+          <p class="hero-text">Soluções em seguros para pessoas, famílias, profissionais e empresas, com atendimento próximo, orientação clara e acompanhamento em cada etapa.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#solucoes">Conhecer nossas soluções</a>
+            <a class="button button-secondary" href="https://wa.me/5517996802184?text=Olá!%20Visitei%20o%20site%20da%20Arthurian%20e%20gostaria%20de%20solicitar%20uma%20cotação." target="_blank" rel="noopener">Solicitar uma cotação</a>
+          </div>
+        </div>
+        <div class="hero-mark reveal" aria-hidden="true">
+          <img src="assets/logo-arthurian.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="solucoes">
+      <div class="section-watermark" aria-hidden="true"><img src="assets/logo-arthurian.png" alt=""></div>
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Soluções</p>
+          <h2>O que você deseja proteger?</h2>
+          <p>Escolha uma categoria para conhecer algumas das possibilidades de proteção.</p>
+        </div>
+
+        <div class="solutions-grid">
+          <article class="solution-card reveal">
+            <h3>Veículos</h3>
+            <p>Proteção para automóveis, motos, caminhões e frotas, com coberturas adequadas ao seu perfil.</p>
+            <a href="#contato">Quero saber mais <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="solution-card reveal">
+            <h3>Família e vida</h3>
+            <p>Planejamento e segurança financeira para quem você ama, nos momentos em que mais importa.</p>
+            <a href="#contato">Quero saber mais <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="solution-card reveal">
+            <h3>Patrimônio</h3>
+            <p>Soluções para residências, condomínios e bens que fazem parte da sua história.</p>
+            <a href="#contato">Quero saber mais <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="solution-card reveal">
+            <h3>Empresas</h3>
+            <p>Proteção para operações, estruturas, equipes e responsabilidades do seu negócio.</p>
+            <a href="#contato">Quero saber mais <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="solution-card reveal">
+            <h3>Responsabilidade profissional</h3>
+            <p>Proteção para profissionais que exercem atividades técnicas e assumem responsabilidades diariamente.</p>
+            <a href="#contato">Quero saber mais <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="solution-card reveal">
+            <h3>Viagens e saúde</h3>
+            <p>Assistência e tranquilidade para viagens, além de soluções de saúde para pessoas e empresas.</p>
+            <a href="#contato">Quero saber mais <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="diferenciais">
+      <div class="section-watermark" aria-hidden="true"><img src="assets/logo-arthurian.png" alt=""></div>
+      <div class="container split-layout">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Por que escolher a Arthurian</p>
+          <h2>Um bom seguro começa com uma boa orientação.</h2>
+        </div>
+        <div class="feature-list">
+          <article class="feature reveal">
+            <h3>Atendimento próximo</h3>
+            <p>Você fala com pessoas que buscam compreender sua realidade antes de apresentar qualquer proposta.</p>
+          </article>
+          <article class="feature reveal">
+            <h3>Análise personalizada</h3>
+            <p>Comparamos opções, coberturas, franquias e condições para indicar uma solução coerente com a sua necessidade.</p>
+          </article>
+          <article class="feature reveal">
+            <h3>Acompanhamento</h3>
+            <p>Nosso trabalho não termina na contratação. Permanecemos ao seu lado quando você precisar de orientação.</p>
+          </article>
+          <article class="feature reveal">
+            <h3>Clareza e responsabilidade</h3>
+            <p>Informações explicadas de forma simples, sem promessas exageradas e com respeito às condições de cada seguradora.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section challenge" id="desafio">
+      <div class="container">
+        <div class="challenge-intro reveal">
+          <p class="eyebrow light">Desafio Arthurian</p>
+          <h2>Traga sua cotação. Coloque-nos à prova.</h2>
+          <p>Já possui uma cotação de seguro? Envie para a Arthurian. Faremos uma análise técnica e gratuita para verificar se é possível apresentar uma proposta mais vantajosa, preservando condições equivalentes.</p>
+
+          <div class="challenge-highlight">
+            <strong>Igualamos ou buscamos uma condição até 5% mais vantajosa.*</strong>
+            <span>Sempre com a mesma seguradora, o mesmo perfil, o mesmo veículo e coberturas equivalentes.</span>
+          </div>
+
+          <a class="button button-gold" href="https://wa.me/5517996802184?text=Olá!%20Quero%20participar%20do%20Desafio%20Arthurian%20e%20enviar%20minha%20cotação%20para%20análise." target="_blank" rel="noopener">Quero participar do Desafio</a>
+        </div>
+
+        <div class="challenge-steps reveal" aria-label="Etapas do Desafio Arthurian">
+          <article class="challenge-step">
+            <div class="challenge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M7 3.5h7l3 3V20H7z"/><path d="M14 3.5V7h3"/><path d="M9.5 11h5M9.5 14h5M9.5 17h3"/></svg>
+            </div>
+            <h3>Envie sua cotação</h3>
+            <p>Encaminhe pelo WhatsApp uma proposta válida e legível.</p>
+          </article>
+          <article class="challenge-step">
+            <div class="challenge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 5 5M8.5 10.5l1.5 1.5 3-3"/></svg>
+            </div>
+            <h3>Análise completa</h3>
+            <p>Conferimos seguradora, perfil, veículo, coberturas, franquias e pagamento.</p>
+          </article>
+          <article class="challenge-step">
+            <div class="challenge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 7h16M7 4v6M17 4v6M6 13h4v4H6zM14 13h4v4h-4z"/></svg>
+            </div>
+            <h3>Comparação equivalente</h3>
+            <p>A comparação só é feita quando as principais condições forem correspondentes.</p>
+          </article>
+          <article class="challenge-step">
+            <div class="challenge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12.5 9 17l11-11"/><path d="M5 4h10a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8a4 4 0 0 1 1-2.7"/></svg>
+            </div>
+            <h3>Você escolhe</h3>
+            <p>Apresentamos a alternativa encontrada com clareza e sem compromisso.</p>
+          </article>
+        </div>
+
+        <div class="challenge-criteria reveal">
+          <article>
+            <h3>Mesma seguradora</h3>
+            <p>A proposta apresentada deve ser da mesma companhia que será cotada pela Arthurian.</p>
+          </article>
+          <article>
+            <h3>Mesmo perfil e veículo</h3>
+            <p>Condutor, uso, CEP, modelo, versão, ano e demais características devem ser equivalentes.</p>
+          </article>
+          <article>
+            <h3>Mesmas garantias</h3>
+            <p>Coberturas, assistências, franquias, limites e forma de pagamento devem permitir comparação justa.</p>
+          </article>
+        </div>
+
+        <p class="challenge-note reveal">*A obtenção de condição até 5% mais vantajosa depende da viabilidade técnica e comercial, da análise de risco, dos critérios de subscrição, da tarifa vigente e da aprovação da seguradora. Não há promessa de benefício quando as condições não forem equivalentes. Campanha não aplicável a convênios, frotas, planos coletivos ou seguros com condições especiais não padronizadas.</p>
+      </div>
+    </section>
+
+    <section class="section" id="conteudo-util">
+      <div class="section-watermark" aria-hidden="true"><img src="assets/logo-arthurian.png" alt=""></div>
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow">Informação que ajuda</p>
+          <h2>Conteúdo simples para decisões mais seguras.</h2>
+        </div>
+
+        <div class="content-grid">
+          <article class="knowledge-card reveal">
+            <span>Você sabia?</span>
+            <h3>Seguro de vida pode oferecer proteção além do falecimento.</h3>
+            <p>Dependendo da contratação, a apólice pode incluir coberturas para invalidez, doenças graves e outras situações previstas.</p>
+          </article>
+
+          <article class="knowledge-card interactive reveal" id="mito-card">
+            <span>Mito ou verdade?</span>
+            <h3>“Quem bate atrás sempre está errado.”</h3>
+            <div class="poll-actions">
+              <button data-answer="mito">Mito</button>
+              <button data-answer="verdade">Verdade</button>
+            </div>
+            <p class="poll-result" aria-live="polite"></p>
+          </article>
+
+          <article class="knowledge-card reveal">
+            <span>Dica Arthurian</span>
+            <h3>Antes de renovar, confira mais do que o preço.</h3>
+            <p>Compare também as coberturas, os limites, a franquia, as assistências e as condições para os principais condutores.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="depoimentos">
+      <div class="section-watermark" aria-hidden="true"><img src="assets/logo-arthurian.png" alt=""></div>
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">A confiança de quem escolheu a Arthurian</p>
+          <h2>Histórias reais, contadas por nossos clientes.</h2>
+          <p>Este espaço será preenchido com fotos e depoimentos autorizados de clientes.</p>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial placeholder reveal">
+            <div class="avatar" aria-hidden="true">Foto</div>
+            <blockquote>Depoimento do cliente sobre o atendimento e a experiência com a Arthurian.</blockquote>
+            <p><strong>Nome do cliente</strong><br><span>Profissão • Cidade/UF</span></p>
+          </article>
+          <article class="testimonial placeholder reveal">
+            <div class="avatar" aria-hidden="true">Foto</div>
+            <blockquote>Depoimento do cliente sobre o atendimento e a experiência com a Arthurian.</blockquote>
+            <p><strong>Nome do cliente</strong><br><span>Profissão • Cidade/UF</span></p>
+          </article>
+          <article class="testimonial placeholder reveal">
+            <div class="avatar" aria-hidden="true">Foto</div>
+            <blockquote>Depoimento do cliente sobre o atendimento e a experiência com a Arthurian.</blockquote>
+            <p><strong>Nome do cliente</strong><br><span>Profissão • Cidade/UF</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section partners">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Seguradoras e parceiros</p>
+          <h2>Opções reconhecidas no mercado.</h2>
+          <p>As marcas serão inseridas após a confirmação das autorizações e dos materiais oficiais de cada parceira.</p>
+        </div>
+        <div class="partner-list reveal" aria-label="Espaços reservados para logos de parceiros">
+          <span>Porto</span><span>Mapfre</span><span>Zurich</span><span>Tokio Marine</span><span>Generali</span><span>Berkley</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contato">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">Vamos conversar?</p>
+          <h2>Cada cliente possui uma realidade diferente.</h2>
+          <p>Será um prazer conhecer a sua e apresentar as soluções mais adequadas para proteger o que é importante para você.</p>
+        </div>
+        <div class="contact-actions reveal">
+          <a class="button button-primary" href="https://wa.me/5517996802184?text=Olá!%20Visitei%20o%20site%20da%20Arthurian%20e%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+          <p><strong>Telefone:</strong> (17) 99680-2184</p>
+          <p><strong>Atendimento:</strong> Catanduva/SP e todo o Brasil</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/logo-arthurian.png" alt="Arthurian Seguros by Fumagali">
+        <p>Corretora de Seguros e Consultoria Empresarial.</p>
+      </div>
+      <div>
+        <p class="footer-title">Navegação</p>
+        <a href="#solucoes">Soluções</a>
+        <a href="#desafio">Desafio Arthurian</a>
+        <a href="#conteudo-util">Conteúdo</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div>
+        <p class="footer-title">Informações</p>
+        <a href="politica-de-privacidade.html">Política de Privacidade</a>
+        <p class="company-data">CNPJ: 66.736.988/0001-60<br>Registro SUSEP nº 262180809</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="ano"></span> Arthurian. Todos os direitos reservados.</p>
+      <p>Protegendo conquistas. Construindo confiança.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5517996802184?text=Olá!%20Visitei%20o%20site%20da%20Arthurian%20e%20gostaria%20de%20mais%20informações." target="_blank" rel="noopener" aria-label="Falar com a Arthurian pelo WhatsApp">WhatsApp</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
