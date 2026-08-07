@@ -393,7 +393,264 @@
         grid-template-columns: 1fr;
       }
     }
-  </style>
+  
+
+    /* Atualização 07/08/2026 — hero mais amplo + integração Fumagali */
+    @media (min-width: 921px) {
+      .hero .container {
+        width: min(calc(100% - 80px), 1480px);
+      }
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+        gap: clamp(4rem, 6vw, 8rem);
+      }
+      .hero-copy {
+        max-width: 760px;
+      }
+      .hero-mark {
+        justify-content: flex-end;
+        transform: translate(1.5vw, -2vh);
+      }
+      .hero-mark img {
+        width: min(535px, 96%);
+      }
+    }
+
+    .story-link {
+      border-bottom: 1px solid rgba(143,108,50,.45);
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .story-link:hover,
+    .story-link:focus-visible {
+      color: var(--gold-dark);
+      border-color: var(--gold-dark);
+    }
+
+    /* Rodapé institucional — versão final */
+    .site-footer {
+      background: #1d1d1a;
+      color: #d7d4ca;
+      padding: 54px 0 34px;
+    }
+    .site-footer .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr 1fr 1.05fr;
+      gap: clamp(2.4rem, 5vw, 5.8rem);
+      align-items: start;
+    }
+    .site-footer .footer-grid > div:first-child {
+      text-align: center;
+    }
+    .site-footer .footer-grid > div:first-child img {
+      width: 160px;
+      margin: 0 auto 1rem;
+    }
+    .site-footer .footer-grid > div:first-child p {
+      margin: 0 auto;
+      max-width: 330px;
+      color: #e0ddd4;
+    }
+    .site-footer .footer-title {
+      margin: 0 0 1.1rem;
+      color: #fff;
+      font-weight: 600;
+    }
+    .site-footer .footer-grid a {
+      display: block;
+      margin: .55rem 0;
+      color: #d7d4ca;
+    }
+    .site-footer .company-data {
+      margin-top: 1.8rem;
+      line-height: 1.7;
+      color: #d7d4ca;
+    }
+    .footer-partner {
+      min-height: 185px;
+      border-left: 3px solid rgba(255,255,255,.92);
+      padding-left: clamp(2.5rem, 5vw, 5.4rem);
+      text-align: center;
+    }
+    .footer-partner-label {
+      margin: 0 0 1.6rem;
+      color: #d7ba7f;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .footer-partner-brand {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .7rem;
+      margin: 0 auto;
+    }
+    .footer-partner-brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      margin: 0;
+      filter: none;
+      opacity: 1;
+    }
+    .footer-partner-name {
+      color: #fff;
+      font-family: var(--serif);
+      font-size: 1.16rem;
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+    .footer-partner-brand:hover .footer-partner-name { color: #d7ba7f; }
+    .site-footer .footer-bottom {
+      margin-top: 1.75rem;
+      padding-top: 1.7rem;
+      border-top: 1px solid rgba(255,255,255,.10);
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      color: #98958d;
+      font-size: .82rem;
+    }
+    .site-footer .footer-bottom p { margin: 0; }
+
+    @media (max-width: 920px) {
+      .site-footer .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-partner {
+        border-left: 0;
+        border-top: 1px solid rgba(255,255,255,.18);
+        padding: 2rem 0 0;
+        min-height: 0;
+      }
+    }
+    @media (max-width: 620px) {
+      .site-footer .footer-grid { grid-template-columns: 1fr; gap: 2.2rem; }
+      .site-footer .footer-grid > div { text-align: center; }
+      .footer-partner-label { white-space: normal; }
+      .site-footer .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+    }
+
+
+    /* Rodapé final aprovado — 07/08/2026 */
+    .site-footer {
+      background:#1d1d1a !important;
+      color:#d7d4ca !important;
+      padding:54px 0 22px !important;
+    }
+    .site-footer .footer-grid {
+      display:grid !important;
+      grid-template-columns:1.15fr .9fr 1.15fr 1.12fr !important;
+      gap:clamp(2rem,4vw,5.2rem) !important;
+      align-items:start !important;
+    }
+    .site-footer .footer-grid > div:first-child {
+      text-align:center !important;
+    }
+    .site-footer .footer-grid > div:first-child img {
+      display:block !important;
+      width:150px !important;
+      height:auto !important;
+      margin:0 auto 1.15rem !important;
+      filter:brightness(0) invert(1) !important;
+      opacity:.94 !important;
+    }
+    .site-footer .footer-grid > div:first-child p {
+      margin:0 auto !important;
+      max-width:310px !important;
+      color:#f0ede5 !important;
+      line-height:1.55 !important;
+      font-size:.98rem !important;
+    }
+    .site-footer .footer-title {
+      margin:0 0 1.15rem !important;
+      color:#fff !important;
+      font-weight:700 !important;
+      font-size:1rem !important;
+    }
+    .site-footer .footer-grid a {
+      display:block !important;
+      margin:.6rem 0 !important;
+      color:#d7d4ca !important;
+    }
+    .site-footer .company-data {
+      margin-top:1.65rem !important;
+      line-height:1.65 !important;
+      color:#d7d4ca !important;
+    }
+    .site-footer .footer-partner {
+      min-height:168px !important;
+      border-left:3px solid rgba(255,255,255,.92) !important;
+      padding-left:clamp(2.1rem,4vw,4.8rem) !important;
+      display:flex !important;
+      flex-direction:column !important;
+      align-items:center !important;
+      justify-content:flex-start !important;
+      text-align:center !important;
+    }
+    .site-footer .footer-partner-label {
+      margin:0 0 1.5rem !important;
+      color:#d7ba7f !important;
+      font-size:.72rem !important;
+      font-weight:700 !important;
+      letter-spacing:.17em !important;
+      line-height:1.2 !important;
+      text-transform:uppercase !important;
+      white-space:nowrap !important;
+    }
+    .site-footer .footer-partner-brand {
+      display:flex !important;
+      flex-direction:column !important;
+      align-items:center !important;
+      justify-content:center !important;
+      gap:.35rem !important;
+      margin:0 auto !important;
+      text-align:center !important;
+      width:max-content !important;
+      max-width:100% !important;
+    }
+    .site-footer .footer-partner-brand img {
+      display:block !important;
+      width:58px !important;
+      height:58px !important;
+      object-fit:contain !important;
+      margin:0 auto .15rem !important;
+      filter:none !important;
+      opacity:1 !important;
+    }
+    .site-footer .footer-partner-name {
+      display:block !important;
+      color:#fff !important;
+      font-family:var(--serif) !important;
+      font-size:1.15rem !important;
+      font-weight:500 !important;
+      line-height:1.1 !important;
+      white-space:nowrap !important;
+      text-align:center !important;
+    }
+    .site-footer .footer-bottom {
+      margin-top:2rem !important;
+      padding-top:1.55rem !important;
+      border-top:1px solid rgba(255,255,255,.10) !important;
+      display:flex !important;
+      justify-content:space-between !important;
+      align-items:center !important;
+      gap:2rem !important;
+      color:#98958d !important;
+      font-size:.82rem !important;
+    }
+    .site-footer .footer-bottom p { margin:0 !important; }
+    @media (max-width:920px){
+      .site-footer .footer-grid{grid-template-columns:1fr 1fr !important;}
+      .site-footer .footer-partner{border-left:0 !important;border-top:1px solid rgba(255,255,255,.18) !important;padding:2rem 0 0 !important;min-height:0 !important;}
+    }
+    @media (max-width:620px){
+      .site-footer .footer-grid{grid-template-columns:1fr !important;gap:2.25rem !important;}
+      .site-footer .footer-grid>div{text-align:center !important;}
+      .site-footer .footer-partner-label{white-space:normal !important;}
+      .site-footer .footer-bottom{flex-direction:column !important;align-items:center !important;text-align:center !important;}
+    }
+</style>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -618,7 +875,7 @@
           </div>
 
           <div class="story-copy reveal">
-            <p>A Arthurian nasceu da prática e da experiência adquiridas ao lado de empresários, profissionais liberais, produtores rurais e famílias atendidos pela <strong>Fumagali Advocacia</strong>.</p>
+            <p>A Arthurian nasceu da prática e da experiência adquiridas ao lado de empresários, profissionais liberais, produtores rurais e famílias atendidos pela <a class="story-link" href="https://fumagaliadvocacia.com.br/" target="_blank" rel="noopener" aria-label="Conhecer o site da Fumagali Advocacia"><strong>Fumagali Advocacia</strong></a>.</p>
             <p>Ao longo dos anos, percebemos que muitas demandas apresentadas pelos nossos clientes iam além da esfera jurídica. Em diversas situações, o verdadeiro desafio não era apenas resolver um problema já existente, mas evitar que ele acontecesse.</p>
             <p>Foi nesse momento que compreendemos que proteger um patrimônio exige mais do que conhecimento técnico. Exige planejamento, análise e a capacidade de identificar, entre inúmeras possibilidades, a solução mais adequada para cada realidade.</p>
             <p>Assim nasceu a Arthurian.</p>
@@ -701,6 +958,13 @@
         <p class="footer-title">Informações</p>
         <a href="politica-de-privacidade.html">Política de Privacidade</a>
         <p class="company-data">CNPJ: 66.736.988/0001-60<br>Registro SUSEP nº 262180809</p>
+      </div>
+      <div class="footer-partner" aria-label="Parceiro institucional">
+        <p class="footer-partner-label">Parceiro institucional</p>
+        <a class="footer-partner-brand" href="https://fumagaliadvocacia.com.br/" target="_blank" rel="noopener" aria-label="Conhecer a Fumagali Advocacia">
+          <img src="assets/logo-fumagali-parceiro.png" alt="Fumagali Advocacia">
+          <span class="footer-partner-name">Fumagali Advocacia</span>
+        </a>
       </div>
     </div>
     <div class="container footer-bottom">
