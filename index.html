@@ -6,11 +6,338 @@
   <meta name="description" content="Arthurian Seguros by Fumagali — Corretora de Seguros e Consultoria Empresarial. Soluções para pessoas, famílias, profissionais e empresas.">
   <meta name="theme-color" content="#f8f6f1">
   <title>Arthurian Seguros | Proteção com confiança</title>
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon.png?v=20260809-2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260809-2">
+  <style id="arthurian-full-css-failsafe">
+:root {
+  --cream: #f8f6f1;
+  --paper: #fffdf9;
+  --white: #ffffff;
+  --graphite: #252522;
+  --muted: #67665f;
+  --line: #ded9cf;
+  --gold: #b18b47;
+  --gold-dark: #8f6c32;
+  --max: 1180px;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Inter", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--graphite);
+  background: var(--paper);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: -4rem;
+  padding: .8rem 1rem;
+  background: var(--graphite);
+  color: white;
+  z-index: 999;
+}
+.skip-link:focus { top: 1rem; }
+
+.container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+.section { padding: 112px 0; position: relative; }
+.section-soft { background: var(--cream); }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,253,249,.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(222,217,207,.75);
+}
+.nav-wrap { min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.brand img { width: 142px; }
+.main-nav { display: flex; align-items: center; gap: 1.8rem; font-size: .88rem; }
+.main-nav a { position: relative; }
+.main-nav a::after { content:""; position:absolute; left:0; right:100%; bottom:-6px; height:1px; background:var(--gold); transition:.25s; }
+.main-nav a:hover::after { right:0; }
+.menu-toggle { display:none; border:0; background:transparent; padding:.5rem; }
+.menu-toggle span { display:block; width:24px; height:1px; background:var(--graphite); margin:6px 0; }
+
+.hero { min-height: calc(100vh - 86px); display: grid; align-items: center; overflow: hidden; }
+.hero-grid { display:grid; grid-template-columns: 1.15fr .85fr; align-items:center; gap:6vw; }
+.hero-copy { max-width: 690px; position:relative; z-index:2; }
+.eyebrow { margin:0 0 1.15rem; color:var(--gold-dark); letter-spacing:.14em; text-transform:uppercase; font-size:.76rem; font-weight:600; }
+.eyebrow.light { color:#d7ba7f; }
+h1,h2,h3 { margin-top:0; font-family:var(--serif); font-weight:500; line-height:1.08; }
+h1 { font-size:clamp(3.6rem, 8vw, 7.7rem); letter-spacing:-.045em; margin-bottom:1.6rem; }
+h2 { font-size:clamp(2.5rem, 5vw, 4.7rem); letter-spacing:-.035em; }
+h3 { font-size:1.55rem; }
+.hero-text { max-width:650px; font-size:clamp(1.05rem,1.5vw,1.25rem); color:var(--muted); }
+.hero-actions { display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.3rem; }
+.button { display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:.75rem 1.35rem; border:1px solid transparent; border-radius:999px; font-size:.92rem; font-weight:600; transition:transform .2s, background .2s, color .2s, border-color .2s; }
+.button:hover { transform:translateY(-2px); }
+.button-primary { background:var(--graphite); color:white; }
+.button-primary:hover { background:#111; }
+.button-secondary { border-color:var(--line); background:transparent; }
+.button-secondary:hover { border-color:var(--gold); color:var(--gold-dark); }
+.button-gold { background:var(--gold); color:#171611; }
+.button-gold:hover { background:#c29a51; }
+.hero-mark { display:flex; justify-content:center; opacity:.92; }
+.hero-mark img { width:min(410px,85%); filter:drop-shadow(0 18px 40px rgba(63,49,22,.08)); }
+.watermark { position:absolute; right:-2vw; bottom:-15vw; font-family:var(--serif); font-size:46vw; line-height:.75; color:rgba(177,139,71,.035); user-select:none; }
+
+.section-heading { max-width:800px; margin-bottom:3.5rem; }
+.section-heading > p:last-child { color:var(--muted); max-width:650px; }
+.solutions-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+.solution-card { padding:2.2rem; min-height:310px; display:flex; flex-direction:column; border-right:1px solid var(--line); border-bottom:1px solid var(--line); transition:background .25s, transform .25s; }
+.solution-card:hover { background:var(--cream); transform:translateY(-4px); }
+.card-number { color:var(--gold); font-size:.75rem; letter-spacing:.12em; margin-bottom:3rem; }
+.solution-card p { color:var(--muted); }
+.solution-card a { margin-top:auto; font-weight:600; font-size:.9rem; }
+
+.split-layout { display:grid; grid-template-columns:.85fr 1.15fr; gap:7vw; align-items:start; }
+.feature-list { border-top:1px solid var(--line); }
+.feature { padding:2rem 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:230px 1fr; gap:2rem; }
+.feature h3 { margin-bottom:0; font-size:1.35rem; }
+.feature p { margin:0; color:var(--muted); }
+
+.challenge { background:var(--graphite); color:white; }
+.challenge-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:7vw; align-items:center; }
+.challenge h2 { color:white; }
+.challenge p { color:#d8d6cf; }
+.challenge-rule { border:1px solid rgba(255,255,255,.16); border-radius:24px; padding:2.2rem; background:rgba(255,255,255,.035); }
+.challenge-rule ol { padding-left:1.2rem; }
+.challenge-rule li { margin-bottom:.75rem; }
+.challenge-rule small { color:#aaa79e; }
+
+.content-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+.knowledge-card { min-height:330px; padding:2rem; border:1px solid var(--line); background:white; border-radius:18px; }
+.knowledge-card > span { display:block; color:var(--gold-dark); text-transform:uppercase; font-size:.72rem; letter-spacing:.13em; font-weight:600; margin-bottom:2rem; }
+.knowledge-card p { color:var(--muted); }
+.poll-actions { display:flex; gap:.7rem; margin:1.5rem 0; }
+.poll-actions button { border:1px solid var(--line); background:transparent; border-radius:999px; padding:.6rem 1rem; cursor:pointer; }
+.poll-actions button:hover { border-color:var(--gold); }
+.poll-result { min-height:4.5rem; font-size:.92rem; }
+
+.testimonial-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+.testimonial { padding:2rem; background:white; border:1px solid var(--line); border-radius:18px; }
+.avatar { width:72px; height:72px; border-radius:50%; display:grid; place-items:center; background:var(--cream); color:#99958c; font-size:.72rem; margin-bottom:1.5rem; border:1px dashed #c9c2b5; }
+.testimonial blockquote { margin:0 0 2rem; font-family:var(--serif); font-size:1.25rem; line-height:1.45; }
+.testimonial span { color:var(--muted); font-size:.86rem; }
+.placeholder { opacity:.82; }
+
+.partner-list { display:grid; grid-template-columns:repeat(6,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+.partner-list span { min-height:105px; display:grid; place-items:center; border-right:1px solid var(--line); border-bottom:1px solid var(--line); color:#77736a; font-weight:600; }
+
+.contact { border-top:1px solid var(--line); }
+.contact-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:7vw; align-items:end; }
+.contact-actions { border-left:1px solid var(--line); padding-left:3rem; }
+.contact-actions p { color:var(--muted); }
+
+.site-footer { background:#1d1d1a; color:#d7d4ca; padding:72px 0 26px; }
+.footer-grid { display:grid; grid-template-columns:1.3fr .7fr 1fr; gap:4rem; }
+.footer-grid img { width:160px; filter:brightness(0) invert(1); opacity:.92; margin-bottom:1rem; }
+.footer-grid a { display:block; margin:.5rem 0; color:#c9c6bd; }
+.footer-title { color:white; font-weight:600; }
+.footer-bottom { margin-top:4rem; padding-top:1.4rem; border-top:1px solid rgba(255,255,255,.12); display:flex; justify-content:space-between; gap:2rem; color:#98958d; font-size:.82rem; }
+
+.whatsapp-float { position:fixed; right:22px; bottom:22px; z-index:90; background:var(--graphite); color:white; padding:.82rem 1rem; border-radius:999px; font-size:.82rem; font-weight:600; box-shadow:0 12px 30px rgba(0,0,0,.18); }
+
+.reveal { opacity:0; transform:translateY(22px); transition:opacity .75s ease, transform .75s ease; }
+.reveal.visible { opacity:1; transform:none; }
+
+@media (max-width: 920px) {
+  .section { padding:86px 0; }
+  .menu-toggle { display:block; z-index:3; }
+  .main-nav { position:fixed; inset:86px 0 auto; background:var(--paper); border-bottom:1px solid var(--line); display:none; flex-direction:column; align-items:flex-start; padding:1.6rem 20px 2rem; gap:1.2rem; }
+  .main-nav.open { display:flex; }
+  .hero-grid, .split-layout, .challenge-grid, .contact-grid { grid-template-columns:1fr; }
+  .hero { min-height:auto; }
+  .hero-mark { order:-1; justify-content:flex-start; }
+  .hero-mark img { width:220px; }
+  h1 { font-size:clamp(3.1rem,13vw,5.6rem); }
+  .solutions-grid, .content-grid, .testimonial-grid { grid-template-columns:1fr 1fr; }
+  .feature { grid-template-columns:1fr; gap:.5rem; }
+  .partner-list { grid-template-columns:repeat(3,1fr); }
+  .contact-actions { border-left:0; border-top:1px solid var(--line); padding:2rem 0 0; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+}
+
+@media (max-width: 620px) {
+  .container { width:min(calc(100% - 28px), var(--max)); }
+  .nav-wrap { min-height:74px; }
+  .brand img { width:120px; }
+  .main-nav { inset:74px 0 auto; }
+  .hero { padding-top:60px; }
+  .hero-actions { flex-direction:column; align-items:stretch; }
+  .solutions-grid, .content-grid, .testimonial-grid { grid-template-columns:1fr; }
+  .solution-card { min-height:260px; }
+  .partner-list { grid-template-columns:repeat(2,1fr); }
+  .footer-grid { grid-template-columns:1fr; }
+  .footer-bottom { flex-direction:column; }
+  .whatsapp-float { right:14px; bottom:14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; }
+  *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
+  .reveal { opacity:1; transform:none; }
+}
+
+
+
+/* Rodapé final aprovado — 07/08/2026 */
+.site-footer {
+  background:#1d1d1a !important;
+  color:#d7d4ca !important;
+  padding:54px 0 22px !important;
+}
+.site-footer .footer-grid {
+  display:grid !important;
+  grid-template-columns:1.15fr .9fr 1.15fr 1.12fr !important;
+  gap:clamp(2rem,4vw,5.2rem) !important;
+  align-items:start !important;
+}
+.site-footer .footer-grid > div:first-child {
+  text-align:center !important;
+}
+.site-footer .footer-grid > div:first-child img {
+  display:block !important;
+  width:150px !important;
+  height:auto !important;
+  margin:0 auto 1.15rem !important;
+  filter:brightness(0) invert(1) !important;
+  opacity:.94 !important;
+}
+.site-footer .footer-grid > div:first-child p {
+  margin:0 auto !important;
+  max-width:310px !important;
+  color:#f0ede5 !important;
+  line-height:1.55 !important;
+  font-size:.98rem !important;
+}
+.site-footer .footer-title {
+  margin:0 0 1.15rem !important;
+  color:#fff !important;
+  font-weight:700 !important;
+  font-size:1rem !important;
+}
+.site-footer .footer-grid a {
+  display:block !important;
+  margin:.6rem 0 !important;
+  color:#d7d4ca !important;
+}
+.site-footer .company-data {
+  margin-top:1.65rem !important;
+  line-height:1.65 !important;
+  color:#d7d4ca !important;
+}
+.site-footer .footer-partner {
+  min-height:168px !important;
+  border-left:3px solid rgba(255,255,255,.92) !important;
+  padding-left:clamp(2.1rem,4vw,4.8rem) !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  text-align:center !important;
+}
+.site-footer .footer-partner-label {
+  margin:0 0 1.5rem !important;
+  color:#d7ba7f !important;
+  font-size:.72rem !important;
+  font-weight:700 !important;
+  letter-spacing:.17em !important;
+  line-height:1.2 !important;
+  text-transform:uppercase !important;
+  white-space:nowrap !important;
+}
+.site-footer .footer-partner-brand {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:.35rem !important;
+  margin:0 auto !important;
+  text-align:center !important;
+  width:max-content !important;
+  max-width:100% !important;
+}
+.site-footer .footer-partner-brand img {
+  display:block !important;
+  width:58px !important;
+  height:58px !important;
+  object-fit:contain !important;
+  margin:0 auto .15rem !important;
+  filter:none !important;
+  opacity:1 !important;
+}
+.site-footer .footer-partner-name {
+  display:block !important;
+  color:#fff !important;
+  font-family:var(--serif) !important;
+  font-size:1.15rem !important;
+  font-weight:500 !important;
+  line-height:1.1 !important;
+  white-space:nowrap !important;
+  text-align:center !important;
+}
+.site-footer .footer-bottom {
+  margin-top:2rem !important;
+  padding-top:1.55rem !important;
+  border-top:1px solid rgba(255,255,255,.10) !important;
+  display:flex !important;
+  justify-content:space-between !important;
+  align-items:center !important;
+  gap:2rem !important;
+  color:#98958d !important;
+  font-size:.82rem !important;
+}
+.site-footer .footer-bottom p { margin:0 !important; }
+@media (max-width:920px){
+  .site-footer .footer-grid{grid-template-columns:1fr 1fr !important;}
+  .site-footer .footer-partner{border-left:0 !important;border-top:1px solid rgba(255,255,255,.18) !important;padding:2rem 0 0 !important;min-height:0 !important;}
+}
+@media (max-width:620px){
+  .site-footer .footer-grid{grid-template-columns:1fr !important;gap:2.25rem !important;}
+  .site-footer .footer-grid>div{text-align:center !important;}
+  .site-footer .footer-partner-label{white-space:normal !important;}
+  .site-footer .footer-bottom{flex-direction:column !important;align-items:center !important;text-align:center !important;}
+}
+
+
+
+/* Seguradoras e parceiros — versão final robusta */
+.partners-section{background:#fff;padding:5rem 0 4.25rem;overflow:hidden;position:relative}
+.partners-heading{text-align:center;margin-bottom:2.2rem}
+.partners-heading h2{max-width:780px;margin:.35rem auto .8rem}
+.partners-heading>p:last-child{max-width:720px;margin:0 auto;color:var(--muted)}
+.partners-marquee{position:relative;width:100%;overflow:hidden;padding:.45rem 0}
+.partners-marquee+.partners-marquee{margin-top:.9rem}
+.partners-marquee::before,.partners-marquee::after{content:"";position:absolute;z-index:3;top:0;bottom:0;width:7rem;pointer-events:none}
+.partners-marquee::before{left:0;background:linear-gradient(90deg,#fff 12%,rgba(255,255,255,0))}
+.partners-marquee::after{right:0;background:linear-gradient(270deg,#fff 12%,rgba(255,255,255,0))}
+.partners-track{display:flex!important;flex-direction:row!important;align-items:center!important;width:max-content!important;min-width:max-content!important;will-change:transform;white-space:nowrap}
+.partners-track-left{animation:arthurianPartnersLeft 54s linear infinite}
+.partners-track-right{animation:arthurianPartnersRight 58s linear infinite;transform:translateX(-50%)}
+.partners-group{display:flex!important;flex-direction:row!important;align-items:center!important;gap:3.65rem;padding-right:3.65rem;width:max-content!important;min-width:max-content!important;flex:0 0 auto!important}
+.partner-logo{width:165px!important;height:90px!important;flex:0 0 165px!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#fff!important;border:0!important;outline:0!important;box-shadow:none!important;margin:0!important;padding:0!important}
+.partner-logo img{display:block!important;width:165px!important;height:82px!important;max-width:165px!important;max-height:82px!important;object-fit:contain!important;background:#fff!important;border:0!important;outline:0!important;box-shadow:none!important;margin:0!important;padding:0!important}
+@keyframes arthurianPartnersLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes arthurianPartnersRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@media(max-width:700px){.partners-section{padding:4rem 0 3.5rem}.partners-marquee::before,.partners-marquee::after{width:2.8rem}.partners-group{gap:2.25rem;padding-right:2.25rem}.partner-logo{width:130px!important;height:76px!important;flex-basis:130px!important}.partner-logo img{width:130px!important;height:70px!important;max-width:130px!important;max-height:70px!important}}
+
+  </style>
+
 
   <style>
     /* Ajustes da versão 1.1 */
@@ -652,33 +979,6 @@
       .site-footer .footer-bottom{flex-direction:column !important;align-items:center !important;text-align:center !important;}
     }
 </style>
-
-<style id="challenge-v3-styles">
-/* Desafio Arthurian — atualização visual 09/08/2026 */
-.challenge-v3 .challenge-intro{max-width:1180px;margin-inline:auto;text-align:center}
-.challenge-v3 .challenge-intro h2{font-size:clamp(2.9rem,5.15vw,5.45rem);line-height:1.02;letter-spacing:-.035em;margin:.35rem auto 1.3rem;white-space:nowrap}
-.challenge-v3 .challenge-intro>p:not(.eyebrow){max-width:850px;margin-inline:auto}
-.challenge-v3 .challenge-highlight{max-width:900px;margin:2rem auto 2.2rem;padding:1.35rem 1.6rem;border-left:0;border-top:1px solid rgba(215,186,127,.65);border-bottom:1px solid rgba(215,186,127,.25);text-align:center}
-.challenge-v3 .challenge-highlight strong{font-size:clamp(1.45rem,2.2vw,2.2rem)}
-.challenge-v3 .challenge-rules{display:grid;grid-template-columns:minmax(250px,.72fr) minmax(0,1.7fr);gap:0;margin:4rem auto 0;max-width:1180px;border:1px solid rgba(215,186,127,.35);border-radius:16px;background:rgba(255,255,255,.025);overflow:hidden}
-.challenge-v3 .challenge-rules-heading{display:flex;align-items:center;gap:1.2rem;padding:2rem;border-right:1px solid rgba(255,255,255,.14);text-align:left}
-.challenge-v3 .challenge-rules-symbol{display:grid;place-items:center;flex:0 0 58px;width:58px;height:58px;border:1px solid #d7ba7f;border-radius:16px;color:#d7ba7f;font-size:1.65rem}
-.challenge-v3 .challenge-rules-heading p{margin:0;color:#fff;font-size:.94rem}
-.challenge-v3 .challenge-rules-heading h3{margin:.2rem 0 .6rem;color:#d7ba7f;font-family:var(--sans);font-size:1.15rem}
-.challenge-v3 .challenge-rules-heading div>span{display:block;color:#c7c4bc;font-size:.82rem;line-height:1.55}
-.challenge-v3 .challenge-rules-list{padding:.65rem 1.5rem}
-.challenge-v3 details{border-bottom:1px solid rgba(255,255,255,.14)}
-.challenge-v3 details:last-child{border-bottom:0}
-.challenge-v3 summary{position:relative;padding:1.05rem 2rem 1.05rem 0;color:#fff;cursor:pointer;list-style:none;font-size:.92rem;font-weight:500}
-.challenge-v3 summary::-webkit-details-marker{display:none}
-.challenge-v3 summary::after{content:'+';position:absolute;right:.15rem;top:50%;transform:translateY(-50%);color:#d7ba7f;font-size:1.25rem;font-weight:300}
-.challenge-v3 details[open] summary::after{content:'−'}
-.challenge-v3 details p{margin:-.15rem 2rem 1rem 0;color:#bdbab2;font-size:.82rem;line-height:1.6}
-.challenge-v3 .challenge-note{max-width:1080px;margin:1.5rem auto 0;text-align:center;color:#aaa79e;font-size:.75rem;line-height:1.55}
-@media(max-width:1100px){.challenge-v3 .challenge-intro h2{font-size:clamp(2.65rem,5.4vw,4.4rem)}}
-@media(max-width:900px){.challenge-v3 .challenge-intro h2{white-space:normal}.challenge-v3 .challenge-rules{grid-template-columns:1fr}.challenge-v3 .challenge-rules-heading{border-right:0;border-bottom:1px solid rgba(255,255,255,.14)}}
-@media(max-width:620px){.challenge-v3 .challenge-intro h2{font-size:clamp(2.35rem,11vw,3.35rem)}.challenge-v3 .challenge-rules-heading{padding:1.4rem}.challenge-v3 .challenge-rules-list{padding:.45rem 1.15rem}.challenge-v3 summary{font-size:.88rem}.challenge-v3 .challenge-highlight{padding:1.2rem 1rem}}
-</style>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -794,55 +1094,68 @@
       </div>
     </section>
 
-    <section class="section challenge challenge-v3" id="desafio">
+    <section class="section challenge" id="desafio">
       <div class="container">
         <div class="challenge-intro reveal">
           <p class="eyebrow light">Desafio Arthurian</p>
           <h2>Traga sua cotação. Coloque-nos à prova.</h2>
-          <p>Nosso desafio é simples: verificar se conseguimos apresentar uma proposta igual ou até 5% mais vantajosa que a sua cotação atual, sempre em condições equivalentes.</p>
+          <p>Já possui uma cotação de seguro? Envie para a Arthurian. Faremos uma análise técnica e gratuita para verificar se é possível apresentar uma proposta mais vantajosa, preservando condições equivalentes.</p>
 
           <div class="challenge-highlight">
             <strong>Igualamos ou buscamos uma condição até 5% mais vantajosa.*</strong>
-            <span>Comparação transparente, respeitando seguradora, perfil, coberturas, garantias e demais condições da proposta apresentada.</span>
+            <span>Sempre com a mesma seguradora, o mesmo perfil, o mesmo veículo e coberturas equivalentes.</span>
           </div>
 
           <a class="button button-gold" href="https://wa.me/5517996802184?text=Olá!%20Quero%20participar%20do%20Desafio%20Arthurian%20e%20enviar%20minha%20cotação%20para%20análise." target="_blank" rel="noopener">Quero participar do Desafio</a>
         </div>
 
-        <div class="challenge-rules reveal" aria-label="Regras do Desafio Arthurian">
-          <div class="challenge-rules-heading">
-            <span class="challenge-rules-symbol" aria-hidden="true">✓</span>
-            <div>
-              <p>Consulte as regras do</p>
-              <h3>Desafio Arthurian</h3>
-              <span>Transparência e comparação justa para oferecer a melhor condição possível.</span>
+        <div class="challenge-steps reveal" aria-label="Etapas do Desafio Arthurian">
+          <article class="challenge-step">
+            <div class="challenge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M7 3.5h7l3 3V20H7z"/><path d="M14 3.5V7h3"/><path d="M9.5 11h5M9.5 14h5M9.5 17h3"/></svg>
             </div>
-          </div>
-          <div class="challenge-rules-list">
-            <details open>
-              <summary>Comparação em condições equivalentes</summary>
-              <p>A análise considera o mesmo perfil, seguradora, veículo ou risco, coberturas, garantias, franquias, limites, assistências e forma de pagamento, conforme aplicável.</p>
-            </details>
-            <details>
-              <summary>Condição igual ou até 5% mais vantajosa</summary>
-              <p>A condição anunciada depende da possibilidade de comparação efetiva entre propostas equivalentes e da viabilidade técnica e comercial da cotação.</p>
-            </details>
-            <details>
-              <summary>Sujeito à análise e aceitação da seguradora</summary>
-              <p>Toda proposta está sujeita à análise de risco, critérios de subscrição, tarifa vigente, disponibilidade comercial e aceite da seguradora.</p>
-            </details>
-            <details>
-              <summary>Reavaliação do perfil ou do risco</summary>
-              <p>Alterações ou divergências no perfil, utilização, CEP, veículo, risco ou demais informações podem modificar o preço e as condições apresentadas.</p>
-            </details>
-            <details>
-              <summary>Hipóteses em que o desafio não se aplica</summary>
-              <p>O desafio não se aplica quando não houver equivalência entre produtos ou condições, inclusive em comparações entre seguradoras distintas, resseguros, convênios, frotas, planos coletivos ou condições especiais e promocionais não padronizadas.</p>
-            </details>
-          </div>
+            <h3>Envie sua cotação</h3>
+            <p>Encaminhe pelo WhatsApp uma proposta válida e legível.</p>
+          </article>
+          <article class="challenge-step">
+            <div class="challenge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 5 5M8.5 10.5l1.5 1.5 3-3"/></svg>
+            </div>
+            <h3>Análise completa</h3>
+            <p>Conferimos seguradora, perfil, veículo, coberturas, franquias e pagamento.</p>
+          </article>
+          <article class="challenge-step">
+            <div class="challenge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 7h16M7 4v6M17 4v6M6 13h4v4H6zM14 13h4v4h-4z"/></svg>
+            </div>
+            <h3>Comparação equivalente</h3>
+            <p>A comparação só é feita quando as principais condições forem correspondentes.</p>
+          </article>
+          <article class="challenge-step">
+            <div class="challenge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12.5 9 17l11-11"/><path d="M5 4h10a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8a4 4 0 0 1 1-2.7"/></svg>
+            </div>
+            <h3>Você escolhe</h3>
+            <p>Apresentamos a alternativa encontrada com clareza e sem compromisso.</p>
+          </article>
         </div>
 
-        <p class="challenge-note reveal">*A expressão “até 5% mais vantajosa” não representa garantia automática de redução. O resultado depende das condições equivalentes da cotação apresentada, da análise de risco, dos critérios de subscrição, da tarifa vigente e da aprovação da seguradora.</p>
+        <div class="challenge-criteria reveal">
+          <article>
+            <h3>Mesma seguradora</h3>
+            <p>A proposta apresentada deve ser da mesma companhia que será cotada pela Arthurian.</p>
+          </article>
+          <article>
+            <h3>Mesmo perfil e veículo</h3>
+            <p>Condutor, uso, CEP, modelo, versão, ano e demais características devem ser equivalentes.</p>
+          </article>
+          <article>
+            <h3>Mesmas garantias</h3>
+            <p>Coberturas, assistências, franquias, limites e forma de pagamento devem permitir comparação justa.</p>
+          </article>
+        </div>
+
+        <p class="challenge-note reveal">*A obtenção de condição até 5% mais vantajosa depende da viabilidade técnica e comercial, da análise de risco, dos critérios de subscrição, da tarifa vigente e da aprovação da seguradora. Não há promessa de benefício quando as condições não forem equivalentes. Campanha não aplicável a convênios, frotas, planos coletivos ou seguros com condições especiais não padronizadas.</p>
       </div>
     </section>
 
@@ -951,48 +1264,48 @@
       <div class="partners-marquee" aria-label="Seguradoras e parceiros da Arthurian">
         <div class="partners-track partners-track-left">
           <div class="partners-group">
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-01.png" alt="Affinity" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-02.png" alt="Allianz" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-03.png" alt="Allsafe" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-04.png" alt="Allseg" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-05.png" alt="Assist Card" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-06.png" alt="AXA" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-07.png" alt="Azul" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-08.png" alt="BP Mensal" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-09.png" alt="BP" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-10.png" alt="Bradesco Seguros" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-11.png" alt="Centauro-ON" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-12.png" alt="Chubb" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-13.png" alt="Darwin" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-14.png" alt="Ezze" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-15.png" alt="Gente" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-16.png" alt="HDI" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-17.png" alt="Icatu" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-18.png" alt="Indiana" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-19.png" alt="Ituran" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-20.png" alt="Justos" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-01.png" alt="Affinity" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-02.png" alt="Allianz" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-03.png" alt="Allsafe" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-04.png" alt="Allseg" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-05.png" alt="Assist Card" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-06.png" alt="AXA" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-07.png" alt="Azul" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-08.png" alt="BP Mensal" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-09.png" alt="BP" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-10.png" alt="Bradesco Seguros" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-11.png" alt="Centauro-ON" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-12.png" alt="Chubb" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-13.png" alt="Darwin" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-14.png" alt="Ezze" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-15.png" alt="Gente" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-16.png" alt="HDI" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-17.png" alt="Icatu" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-18.png" alt="Indiana" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-19.png" alt="Ituran" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-20.png" alt="Justos" decoding="async"></div>
           </div>
           <div class="partners-group" aria-hidden="true">
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-01.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-02.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-03.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-04.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-05.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-06.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-07.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-08.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-09.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-10.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-11.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-12.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-13.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-14.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-15.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-16.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-17.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-18.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-19.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-20.png" alt="" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-01.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-02.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-03.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-04.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-05.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-06.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-07.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-08.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-09.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-10.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-11.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-12.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-13.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-14.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-15.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-16.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-17.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-18.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-19.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-20.png" alt="" decoding="async"></div>
           </div>
         </div>
       </div>
@@ -1000,46 +1313,46 @@
       <div class="partners-marquee" aria-hidden="true">
         <div class="partners-track partners-track-right">
           <div class="partners-group">
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-21.png" alt="MAPFRE" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-22.png" alt="MetLife" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-23.png" alt="MSIG" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-24.png" alt="Novo" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-25.png" alt="Pier" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-26.png" alt="Porto" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-27.png" alt="Sancor" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-28.png" alt="Suhai" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-29.png" alt="Suíça" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-30.png" alt="SulAmérica" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-31.png" alt="Sura" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-32.png" alt="Tokio Marine" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-33.png" alt="Seguros Unimed" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-34.png" alt="Universal Assistance" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-35.png" alt="Usebens" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-36.png" alt="Vital Card" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-37.png" alt="Yelum" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-38.png" alt="Youse" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-39.png" alt="Zurich" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-21.png" alt="Mapfre" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-22.png" alt="MetLife" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-23.png" alt="MSIG" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-24.png" alt="Novo" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-25.png" alt="Pier" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-26.png" alt="Porto Seguro" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-27.png" alt="Sancor Seguros" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-28.png" alt="Suhai" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-29.png" alt="Suíça" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-30.png" alt="SulAmérica" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-31.png" alt="Sura" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-32.png" alt="Tokio Marine" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-33.png" alt="Seguros Unimed" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-34.png" alt="Universal Assistance" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-35.png" alt="Usebens" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-36.png" alt="Vital Card" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-37.png" alt="Yelum" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-38.png" alt="Youse" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-39.png" alt="Zurich" decoding="async"></div>
           </div>
-          <div class="partners-group">
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-21.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-22.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-23.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-24.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-25.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-26.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-27.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-28.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-29.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-30.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-31.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-32.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-33.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-34.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-35.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-36.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-37.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-38.png" alt="" loading="lazy"></div>
-            <div class="partner-logo"><img src="assets/seguradoras/parceiro-39.png" alt="" loading="lazy"></div>
+          <div class="partners-group" aria-hidden="true">
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-21.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-22.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-23.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-24.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-25.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-26.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-27.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-28.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-29.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-30.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-31.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-32.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-33.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-34.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-35.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-36.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-37.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-38.png" alt="" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/seguradoras/parceiro-39.png" alt="" decoding="async"></div>
           </div>
         </div>
       </div>
