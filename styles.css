@@ -300,3 +300,63 @@ h3 { font-size:1.55rem; }
   .site-footer .footer-bottom{flex-direction:column !important;align-items:center !important;text-align:center !important;}
 }
 
+\n\n/* Seguradoras e parceiros — duas esteiras contínuas */
+.partners-section{
+  background:#fff;
+  padding:5rem 0 4.25rem;
+  overflow:hidden;
+}
+.partners-heading{
+  text-align:center;
+  margin-bottom:2.2rem;
+}
+.partners-heading h2{
+  max-width:780px;
+  margin:.35rem auto .8rem;
+}
+.partners-heading>p:last-child{
+  max-width:720px;
+  margin:0 auto;
+  color:var(--muted);
+}
+.partners-marquee{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  padding:.45rem 0;
+}
+.partners-marquee+.partners-marquee{margin-top:.75rem;}
+.partners-marquee::before,.partners-marquee::after{
+  content:"";
+  position:absolute;
+  z-index:3;
+  top:0;bottom:0;
+  width:7rem;
+  pointer-events:none;
+}
+.partners-marquee::before{left:0;background:linear-gradient(90deg,#fff 12%,rgba(255,255,255,0));}
+.partners-marquee::after{right:0;background:linear-gradient(270deg,#fff 12%,rgba(255,255,255,0));}
+.partners-track{display:flex;align-items:center;width:max-content;will-change:transform;}
+.partners-track-left{animation:arthurianPartnersLeft 54s linear infinite;}
+.partners-track-right{animation:arthurianPartnersRight 58s linear infinite;transform:translateX(-50%);}
+.partners-group{display:flex;align-items:center;gap:3.65rem;padding-right:3.65rem;}
+.partner-logo{
+  width:165px;height:90px;
+  flex:0 0 165px;
+  display:flex;align-items:center;justify-content:center;
+  background:#fff;border:0;outline:0;box-shadow:none;
+}
+.partner-logo img{
+  display:block;width:165px;height:82px;object-fit:contain;
+  background:#fff;border:0;outline:0;box-shadow:none;
+}
+@keyframes arthurianPartnersLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes arthurianPartnersRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@media (prefers-reduced-motion:reduce){.partners-track-left,.partners-track-right{animation-play-state:paused;}}
+@media(max-width:700px){
+  .partners-section{padding:4rem 0 3.5rem;}
+  .partners-marquee::before,.partners-marquee::after{width:2.8rem;}
+  .partners-group{gap:2.25rem;padding-right:2.25rem;}
+  .partner-logo{width:130px;height:76px;flex-basis:130px;}
+  .partner-logo img{width:130px;height:70px;}
+}
