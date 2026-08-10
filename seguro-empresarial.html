@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seguro Empresarial | Arthurian Seguros</title>
+<meta name="description" content="A proteção empresarial deve considerar patrimônio, operação, atividade econômica e riscos capazes de interromper o funcionamento da empresa.">
+<link rel="icon" type="image/png" href="assets/favicon.png?v=20260810">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f5f0;--paper:#fff;--text:#191918;--muted:#6d6961;--line:#e8e3d9;--gold:#bd8731;--dark:#0e0f0e;--max:1320px;--sans:Inter,Arial,sans-serif;--serif:"Playfair Display",Georgia,serif}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden}
+body{font-family:var(--sans);color:var(--text);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(calc(100% - 64px),var(--max));margin:auto}
+.header{position:sticky;top:0;z-index:50;background:#0c0d0c;color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.header-in{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand img{width:148px;height:auto;filter:brightness(0) invert(1)}
+.nav{display:flex;align-items:center;gap:28px;font-size:13px}
+.drop{position:relative}
+.drop>a:after{content:"⌄";margin-left:6px}
+.drop-menu{position:absolute;top:calc(100% + 20px);left:-18px;min-width:265px;padding:10px;background:#0e0f0e;border:1px solid #2a2a27;box-shadow:0 24px 60px rgba(0,0,0,.25);display:none}
+.drop:hover .drop-menu{display:block}
+.drop-menu a{display:block;padding:10px 12px;color:#eee}
+.drop-menu a:hover{color:#d8a249;background:#171815}
+.hero{position:relative;min-height:560px;color:#fff;background:#111 center/cover no-repeat}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,5,4,.92) 0%,rgba(4,5,4,.82) 38%,rgba(4,5,4,.34) 68%,rgba(4,5,4,.14) 100%)}
+.hero-in{position:relative;z-index:2;padding:82px 0 72px;max-width:690px}
+.kicker{font-size:13px;letter-spacing:.17em;color:#d9a247;font-weight:600;margin:0 0 16px}
+h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.035em}
+h1{font-size:clamp(50px,5.2vw,78px);line-height:1.02;margin:0 0 22px}
+.hero p{font-size:17px;color:#f0ece4;max-width:590px}
+.hero-points{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:42px}
+.hero-point{border-top:1px solid rgba(213,161,72,.55);padding-top:12px;font-size:12px;color:#e6e1d7}
+.hero-point:before{content:"";width:18px;height:18px;border:1px solid #d19a3b;border-radius:50%;display:block;margin-bottom:8px}
+.section{padding:76px 0}
+.title{text-align:center;max-width:800px;margin:0 auto 36px}
+.title h2{font-size:clamp(34px,3.6vw,54px);line-height:1.1;margin:0 0 10px}
+.title p{margin:0;color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card{padding:24px;background:#fff;border:1px solid var(--line);border-radius:14px;min-height:190px}
+.icon{width:32px;height:32px;border:1.5px solid var(--gold);border-radius:9px;margin-bottom:18px;position:relative}
+.icon:after{content:"";position:absolute;inset:8px;border:1.5px solid var(--gold);border-radius:3px}
+.card h3{font-size:16px;margin:0 0 8px}
+.card p{font-size:13px;color:var(--muted);margin:0}
+.notice{max-width:800px;margin:28px auto 0;border:1px solid #dfbe81;border-radius:10px;padding:12px 18px;text-align:center;font-size:12px;color:#665e53}
+.soft{background:#f8f7f4}
+.feature-layout{display:grid;grid-template-columns:330px 1fr;gap:54px;align-items:start}
+.feature-intro{border-right:1px solid var(--line);padding-right:38px}
+.feature-intro h2{font-size:42px;line-height:1.08;margin:8px 0 14px}
+.feature-intro p{font-size:13px;color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 36px}
+.feature{display:grid;grid-template-columns:34px 1fr;gap:12px}
+.feature .icon{width:28px;height:28px;border-radius:7px;margin:0}
+.feature strong{display:block;font-size:13px;margin-bottom:4px}
+.feature span{display:block;font-size:12px;color:var(--muted)}
+.choose{display:grid;grid-template-columns:minmax(360px,42%) 1fr;background:#fff;min-height:520px}
+.choose-photo{min-height:520px;background:center/cover no-repeat}
+.choose-copy{padding:68px clamp(36px,5vw,78px)}
+.choose-copy .kicker{font-size:12px}
+.choose-copy h2{font-size:clamp(36px,3.7vw,58px);line-height:1.08;margin:8px 0 32px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px}
+.check{display:grid;grid-template-columns:26px 1fr;gap:10px}
+.check:before{content:"✓";color:var(--gold);font-size:18px}
+.check strong{display:block;font-size:14px;margin-bottom:4px}
+.check span{display:block;color:var(--muted);font-size:12px}
+.footer{background:#11120f;color:#cac7bd;padding:56px 0 24px}
+.footer-grid{display:grid;grid-template-columns:1.2fr .8fr 1fr 1.15fr;gap:36px}
+.footer img{width:145px;filter:brightness(0) invert(1);margin-bottom:16px}
+.footer h4{color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px}
+.footer a{display:block;color:#c6c2b8;font-size:12px;margin:7px 0}
+.footer p{font-size:12px;color:#9f9b92}
+.footer-bottom{border-top:1px solid #2a2a27;margin-top:32px;padding-top:18px;display:flex;justify-content:space-between;gap:20px;font-size:11px;color:#8f8c85}
+.mobile{display:none}
+@media(max-width:1050px){
+ .container{width:min(calc(100% - 40px),var(--max))}
+ .nav{gap:16px;font-size:12px}
+ .hero-points{grid-template-columns:1fr 1fr}
+ .cards{grid-template-columns:1fr 1fr}
+ .feature-layout{grid-template-columns:1fr}
+ .feature-intro{border-right:0;border-bottom:1px solid var(--line);padding:0 0 28px}
+ .features{grid-template-columns:1fr 1fr}
+ .choose{grid-template-columns:1fr}
+ .choose-photo{min-height:360px}
+ .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+ .header-in{min-height:72px}
+ .brand img{width:120px}
+ .nav{display:none}
+ .mobile{display:block;color:#fff;font-size:23px}
+ .hero{min-height:auto;background-position:center}
+ .hero:after{background:linear-gradient(180deg,rgba(4,5,4,.58),rgba(4,5,4,.94))}
+ .hero-in{padding:68px 0 52px}
+ h1{font-size:46px}
+ .hero-points{grid-template-columns:1fr 1fr}
+ .section{padding:58px 0}
+ .cards{grid-template-columns:1fr}
+ .features{grid-template-columns:1fr}
+ .choose-photo{min-height:300px}
+ .choose-copy{padding:44px 22px}
+ .checks{grid-template-columns:1fr}
+ .footer-grid{grid-template-columns:1fr}
+ .footer-bottom{flex-direction:column}
+}
+
+/* Rodapé final aprovado — 07/08/2026 */
+.site-footer {
+  background:#1d1d1a !important;
+  color:#d7d4ca !important;
+  padding:54px 0 22px !important;
+}
+.site-footer .footer-grid {
+  display:grid !important;
+  grid-template-columns:1.15fr .9fr 1.15fr 1.12fr !important;
+  gap:clamp(2rem,4vw,5.2rem) !important;
+  align-items:start !important;
+}
+.site-footer .footer-grid > div:first-child {
+  text-align:center !important;
+}
+.site-footer .footer-grid > div:first-child img {
+  display:block !important;
+  width:150px !important;
+  height:auto !important;
+  margin:0 auto 1.15rem !important;
+  filter:brightness(0) invert(1) !important;
+  opacity:.94 !important;
+}
+.site-footer .footer-grid > div:first-child p {
+  margin:0 auto !important;
+  max-width:310px !important;
+  color:#f0ede5 !important;
+  line-height:1.55 !important;
+  font-size:.98rem !important;
+}
+.site-footer .footer-title {
+  margin:0 0 1.15rem !important;
+  color:#fff !important;
+  font-weight:700 !important;
+  font-size:1rem !important;
+}
+.site-footer .footer-grid a {
+  display:block !important;
+  margin:.6rem 0 !important;
+  color:#d7d4ca !important;
+}
+.site-footer .company-data {
+  margin-top:1.65rem !important;
+  line-height:1.65 !important;
+  color:#d7d4ca !important;
+}
+.site-footer .footer-partner {
+  min-height:168px !important;
+  border-left:3px solid rgba(255,255,255,.92) !important;
+  padding-left:clamp(2.1rem,4vw,4.8rem) !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  text-align:center !important;
+}
+.site-footer .footer-partner-label {
+  margin:0 0 1.5rem !important;
+  color:#d7ba7f !important;
+  font-size:.72rem !important;
+  font-weight:700 !important;
+  letter-spacing:.17em !important;
+  line-height:1.2 !important;
+  text-transform:uppercase !important;
+  white-space:nowrap !important;
+}
+.site-footer .footer-partner-brand {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:.35rem !important;
+  margin:0 auto !important;
+  text-align:center !important;
+  width:max-content !important;
+  max-width:100% !important;
+}
+.site-footer .footer-partner-brand img {
+  display:block !important;
+  width:58px !important;
+  height:58px !important;
+  object-fit:contain !important;
+  margin:0 auto .15rem !important;
+  filter:none !important;
+  opacity:1 !important;
+}
+.site-footer .footer-partner-name {
+  display:block !important;
+  color:#fff !important;
+  font-family:var(--serif) !important;
+  font-size:1.15rem !important;
+  font-weight:500 !important;
+  line-height:1.1 !important;
+  white-space:nowrap !important;
+  text-align:center !important;
+}
+.site-footer .footer-bottom {
+  margin-top:2rem !important;
+  padding-top:1.55rem !important;
+  border-top:1px solid rgba(255,255,255,.10) !important;
+  display:flex !important;
+  justify-content:space-between !important;
+  align-items:center !important;
+  gap:2rem !important;
+  color:#98958d !important;
+  font-size:.82rem !important;
+}
+.site-footer .footer-bottom p { margin:0 !important; }
+@media (max-width:920px){
+  .site-footer .footer-grid{grid-template-columns:1fr 1fr !important;}
+  .site-footer .footer-partner{border-left:0 !important;border-top:1px solid rgba(255,255,255,.18) !important;padding:2rem 0 0 !important;min-height:0 !important;}
+}
+@media (max-width:620px){
+  .site-footer .footer-grid{grid-template-columns:1fr !important;gap:2.25rem !important;}
+  .site-footer .footer-grid>div{text-align:center !important;}
+  .site-footer .footer-partner-label{white-space:normal !important;}
+  .site-footer .footer-bottom{flex-direction:column !important;align-items:center !important;text-align:center !important;}
+}
+
+
+
+/* Seguradoras e parceiros — versão final robusta */
+.partners-section{background:#fff;padding:5rem 0 4.25rem;overflow:hidden;position:relative}
+.partners-heading{text-align:center;margin-bottom:2.2rem}
+.partners-heading h2{max-width:780px;margin:.35rem auto .8rem}
+.partners-heading>p:last-child{max-width:720px;margin:0 auto;color:var(--muted)}
+.partners-marquee{position:relative;width:100%;overflow:hidden;padding:.45rem 0}
+.partners-marquee+.partners-marquee{margin-top:.9rem}
+.partners-marquee::before,.partners-marquee::after{content:"";position:absolute;z-index:3;top:0;bottom:0;width:7rem;pointer-events:none}
+.partners-marquee::before{left:0;background:linear-gradient(90deg,#fff 12%,rgba(255,255,255,0))}
+.partners-marquee::after{right:0;background:linear-gradient(270deg,#fff 12%,rgba(255,255,255,0))}
+.partners-track{display:flex!important;flex-direction:row!important;align-items:center!important;width:max-content!important;min-width:max-content!important;will-change:transform;white-space:nowrap}
+.partners-track-left{animation:arthurianPartnersLeft 54s linear infinite}
+.partners-track-right{animation:arthurianPartnersRight 58s linear infinite;transform:translateX(-50%)}
+.partners-group{display:flex!important;flex-direction:row!important;align-items:center!important;gap:3.65rem;padding-right:3.65rem;width:max-content!important;min-width:max-content!important;flex:0 0 auto!important}
+.partner-logo{width:165px!important;height:90px!important;flex:0 0 165px!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#fff!important;border:0!important;outline:0!important;box-shadow:none!important;margin:0!important;padding:0!important}
+.partner-logo img{display:block!important;width:165px!important;height:82px!important;max-width:165px!important;max-height:82px!important;object-fit:contain!important;background:#fff!important;border:0!important;outline:0!important;box-shadow:none!important;margin:0!important;padding:0!important}
+@keyframes arthurianPartnersLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes arthurianPartnersRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@media(max-width:700px){.partners-section{padding:4rem 0 3.5rem}.partners-marquee::before,.partners-marquee::after{width:2.8rem}.partners-group{gap:2.25rem;padding-right:2.25rem}.partner-logo{width:130px!important;height:76px!important;flex-basis:130px!important}.partner-logo img{width:130px!important;height:70px!important;max-width:130px!important;max-height:70px!important}}
+
+  
+</style>
+<style id="arthurian-final-icons">
+.hero-point:before{display:none!important;content:none!important}
+.hero-point{padding-top:10px!important}
+.icon{
+  width:36px!important;height:36px!important;border:0!important;border-radius:0!important;
+  margin-bottom:16px!important;display:flex!important;align-items:center!important;justify-content:flex-start!important;
+}
+.icon:after{display:none!important;content:none!important}
+.icon svg{width:31px;height:31px;fill:none;stroke:var(--gold);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.feature .icon{width:30px!important;height:30px!important;margin:0!important}
+.feature .icon svg{width:26px;height:26px}
+</style>
+
+</head>
+<body>
+<header class="header"><div class="container header-in"><a class="brand" href="index.html#inicio"><img src="assets/logo-arthurian.png" alt="Arthurian Seguros"></a>
+<nav class="nav">
+<a href="index.html#inicio">Início</a>
+<a href="index.html#nossa-historia">Sobre nós</a>
+<div class="drop"><a href="index.html#solucoes">Seguros</a><div class="drop-menu">
+<a href="seguro-auto.html">Seguro Auto</a><a href="seguro-residencial.html">Seguro Residencial</a><a href="seguro-vida.html">Seguro de Vida</a><a href="seguro-empresarial.html">Seguro Empresarial</a><a href="rc-profissional.html">Responsabilidade Civil Profissional</a><a href="seguro-viagem.html">Seguro Viagem</a><a href="consorcio.html">Consórcio</a>
+</div></div>
+<a href="index.html#desafio">Desafio Arthurian</a>
+<a href="index.html#conteudo-util">Conteúdo</a>
+<a href="index.html#contato">Contato</a>
+</nav>
+<span class="mobile">☰</span></div></header>
+<main>
+<section class="hero" style="background-image:url('https://images.unsplash.com/photo-1774544380198-cb13a4005e7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000')"><div class="container"><div class="hero-in"><p class="kicker">SEGURO EMPRESARIAL</p><h1>Proteção para o seu negócio continuar crescendo.</h1><p>A proteção empresarial deve considerar patrimônio, operação, atividade econômica e riscos capazes de interromper o funcionamento da empresa.</p><div class="hero-points"><div class="hero-point">Patrimônio</div><div class="hero-point">Operação</div><div class="hero-point">Responsabilidades</div><div class="hero-point">Continuidade</div></div></div></div></section>
+<section class="section"><div class="container"><div class="title"><h2>O que o Seguro Empresarial pode oferecer</h2><p>As coberturas, serviços, limites e condições dependem do produto contratado. Confirme sempre as informações da proposta e do contrato.</p></div><div class="cards"><article class="card"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2c2 3 4 5 4 8 0 2-1 3-2 4 0-2-1-3-2-4-1 1-3 3-3 5a4 4 0 0 0 8 0c0-5-3-9-5-13Z"/></svg></div><h3>Incêndio e explosão</h3><p>Proteção para danos cobertos à estrutura e ao patrimônio empresarial.</p></article><article class="card"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m13 2-7 12h5l-1 8 8-13h-5V2Z"/></svg></div><h3>Danos elétricos</h3><p>Pode contemplar instalações, máquinas e equipamentos.</p></article><article class="card"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M6 10 8 6h8l2 4"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/><rect x="9" y="2" width="6" height="5" rx="2"/><path d="M10.5 2V1.5A1.5 1.5 0 0 1 12 0a1.5 1.5 0 0 1 1.5 1.5V2"/></svg></div><h3>Roubo ou furto</h3><p>Bens, mercadorias e equipamentos podem ser abrangidos conforme condições.</p></article><article class="card"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 15h11a4 4 0 0 0 .4-8A5.5 5.5 0 0 0 7 8.5 3.5 3.5 0 0 0 6 15Z"/><path d="m7 19-1 2m5-2-1 2m5-2-1 2"/></svg></div><h3>Eventos da natureza</h3><p>Há coberturas para determinados eventos climáticos e seus danos.</p></article><article class="card"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c.6-3.4 2.5-5 5-5 1.7 0 3 .7 4 2 1-1.3 2.3-2 4-2 2.5 0 4.4 1.6 5 5"/></svg></div><h3>Responsabilidade civil</h3><p>Pode proteger a empresa diante de reclamações cobertas de terceiros.</p></article><article class="card"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="6" width="16" height="12" rx="2"/><circle cx="9" cy="12" r="3"/><path d="M15 9h3M15 13h3"/></svg></div><h3>Equipamentos</h3><p>Existem proteções específicas para máquinas, equipamentos e itens eletrônicos.</p></article><article class="card"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V4M4 20h16"/><path d="m7 16 4-4 3 2 4-6"/></svg></div><h3>Lucros cessantes</h3><p>Pode auxiliar quando um evento coberto interrompe a atividade e gera perda de receita.</p></article><article class="card"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V8l4-3 4 3v12M12 20V5l4-3 4 3v15M2 20h20"/></svg></div><h3>Estoques e mercadorias</h3><p>Conteúdo e estoque podem ser dimensionados conforme a realidade da operação.</p></article></div><div class="notice">As condições variam conforme produto, seguradora ou administradora, perfil, limites contratados e critérios de aceitação aplicáveis.</div></div></section>
+<section class="section soft"><div class="container feature-layout"><div class="feature-intro"><p class="kicker">CONTINUIDADE DO NEGÓCIO</p><h2>Proteção que vai além da estrutura física</h2><p>Conheça algumas possibilidades e verifique quais delas estão efetivamente incluídas na contratação.</p></div><div class="features"><div class="feature"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 5 6v5c0 4.5 2.8 7.8 7 10 4.2-2.2 7-5.5 7-10V6l-7-3Z"/><path d="m9.5 12 1.6 1.6 3.7-4"/></svg></div><div><strong>Chaveiro e segurança</strong><span>Serviços emergenciais podem integrar o pacote de assistência.</span></div></div><div class="feature"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.5 6.5a4 4 0 0 0-5 5L3 18l3 3 6.5-6.5a4 4 0 0 0 5-5l-2.2 2.2-3-3L14.5 6.5Z"/><path d="M18 4h3v6"/></svg></div><div><strong>Eletricista e encanador</strong><span>Apoio para ocorrências previstas no estabelecimento.</span></div></div><div class="feature"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M12 4v16M4 12h16"/></svg></div><div><strong>Vidraceiro</strong><span>Pode haver atendimento para determinados reparos emergenciais.</span></div></div><div class="feature"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.5 6.5a4 4 0 0 0-5 5L3 18l3 3 6.5-6.5a4 4 0 0 0 5-5l-2.2 2.2-3-3L14.5 6.5Z"/><path d="M18 4h3v6"/></svg></div><div><strong>Reparos emergenciais</strong><span>As modalidades variam conforme atividade e seguradora.</span></div></div><div class="feature"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 21V5l7-3 7 3v16"/><path d="M9 7h1m4 0h1M9 11h1m4 0h1M9 15h1m4 0h1M3 21h18"/></svg></div><div><strong>Apoio ao estabelecimento</strong><span>Alguns produtos oferecem serviços específicos para empresas.</span></div></div><div class="feature"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V4h8v3M3 12h18"/></svg></div><div><strong>Assistências adicionais</strong><span>Disponibilidade e limites dependem da contratação.</span></div></div></div></div></section>
+<section class="choose"><div class="choose-photo" style="background-image:url('https://images.unsplash.com/photo-1774544380198-cb13a4005e7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000')"></div><div class="choose-copy"><p class="kicker">ANTES DE CONTRATAR</p><h2>O que observar antes de contratar o Seguro Empresarial</h2><div class="checks"><div class="check"><div><strong>Atividade da empresa</strong><span>A atividade econômica influencia riscos, aceitação e coberturas necessárias.</span></div></div><div class="check"><div><strong>Valor do patrimônio</strong><span>Dimensione corretamente imóvel, equipamentos, móveis, máquinas e estoques.</span></div></div><div class="check"><div><strong>Interrupção da operação</strong><span>Avalie a necessidade de proteção para perda de receita após evento coberto.</span></div></div><div class="check"><div><strong>Responsabilidade civil</strong><span>Considere a exposição da empresa a danos causados a clientes e terceiros.</span></div></div><div class="check"><div><strong>Medidas de segurança</strong><span>Sistemas de proteção podem influenciar a análise e as condições.</span></div></div><div class="check"><div><strong>Atualização do seguro</strong><span>Mudanças de endereço, estoque ou atividade devem ser reavaliadas.</span></div></div></div></div></section>
+</main>
+<footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/logo-arthurian.png" alt="Arthurian Seguros by Fumagali">
+        <p>Corretora de Seguros e Consultoria Empresarial.</p>
+      </div>
+      <div>
+        <p class="footer-title">Navegação</p>
+        <a href="index.html#solucoes">Soluções</a>
+        <a href="index.html#desafio">Desafio Arthurian</a>
+        <a href="index.html#conteudo-util">Conteúdo</a>
+        <a href="index.html#contato">Contato</a>
+      </div>
+      <div>
+        <p class="footer-title">Informações</p>
+        <a href="politica-de-privacidade.html">Política de Privacidade</a>
+        <p class="company-data">CNPJ: 66.736.988/0001-60<br>Registro SUSEP nº 262180809</p>
+      </div>
+      <div class="footer-partner" aria-label="Parceiro institucional">
+        <p class="footer-partner-label">Parceiro institucional</p>
+        <a class="footer-partner-brand" href="https://fumagaliadvocacia.com.br/" target="_blank" rel="noopener" aria-label="Conhecer a Fumagali Advocacia">
+          <img src="assets/logo-fumagali-parceiro.png" alt="Fumagali Advocacia">
+          <span class="footer-partner-name">Fumagali Advocacia</span>
+        </a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="ano"></span> Arthurian. Todos os direitos reservados.</p>
+      <p>Protegendo conquistas. Construindo confiança.</p>
+    </div>
+  </footer>
+</body></html>
